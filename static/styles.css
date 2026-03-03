@@ -1,0 +1,87 @@
+:root {
+  --bg: #f6f7fb;
+  --fg: #222;
+  --card: #fff;
+  --primary: #2f6dfb;
+}
+
+body.dark {
+  --bg: #15181d;
+  --fg: #f0f3f9;
+  --card: #222833;
+  --primary: #7aa2ff;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.container {
+  max-width: 760px;
+  margin: 20px auto;
+  padding: 0 12px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 10px;
+  margin-top: 14px;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #c6c8d0;
+  box-sizing: border-box;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.progress-wrap {
+  width: 100%;
+  height: 16px;
+  background: #d4d9e6;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.progress-bar {
+  width: 0;
+  height: 100%;
+  background: #4bbf73;
+  transition: width 0.2s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.disclaimer {
+  font-size: 0.9rem;
+}

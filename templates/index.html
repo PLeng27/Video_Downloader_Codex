@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Video Downloader</h1>
+        <button id="themeToggle">Toggle Dark Mode</button>
+      </header>
+
+      <p class="disclaimer">
+        This tool is for publicly accessible content only. Respect copyright law and platform terms.
+        Do not use it to bypass DRM, authentication, or access restrictions.
+      </p>
+
+      <section class="card">
+        <label for="urlInput">Video URL</label>
+        <input id="urlInput" type="url" placeholder="https://..." />
+        <div class="actions">
+          <button id="fetchButton">Fetch Metadata</button>
+          <button id="downloadButton">Download</button>
+        </div>
+
+        <div id="metadata" class="hidden">
+          <h2 id="videoTitle"></h2>
+          <img id="thumbnail" alt="thumbnail" />
+          <p id="duration"></p>
+          <label for="formatSelect">Format</label>
+          <select id="formatSelect"></select>
+          <label>
+            <input type="checkbox" id="audioOnly" /> Audio only (MP3)
+          </label>
+          <label for="savePath">Save location (optional absolute path)</label>
+          <input id="savePath" type="text" placeholder="/Users/you/Downloads" />
+        </div>
+
+        <div class="progress-wrap hidden" id="progressWrap">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <p id="statusMessage"></p>
+      </section>
+
+      <section class="card">
+        <h3>Download History</h3>
+        <ul id="historyList"></ul>
+      </section>
+
+      <section class="card">
+        <h3>Supported Sources (Public Content)</h3>
+        <ul>
+          <li>YouTube (public videos)</li>
+          <li>Vimeo (public videos)</li>
+          <li>Internet Archive</li>
+          <li>Pexels</li>
+        </ul>
+      </section>
+    </main>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
